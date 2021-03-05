@@ -1,0 +1,44 @@
+
+
+
+
+<div class="row">
+    <div class="col-sm-8">
+        <h3 class="mb-3 mt-3">Add new slot</h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <label class="form-label">From</label>
+                <input [(ngModel)]="time.from" class="form-control" type="time"
+                    />
+            </div>
+            <div class="col-sm-3">
+                <label class="form-label">To</label>
+                <input [(ngModel)]="time.to" class="form-control" type="time" />
+            </div>
+
+            <div class="col-sm-3">
+                <a (click)="addSlot()" class="btn
+                    btn-primary add-button">Add</a>
+            </div>
+
+
+
+        </div>
+        <div class="card mt-3" *ngFor="let slot of
+            availableSlots">
+            <div class="card-body">
+                <h5 class="card-title">{{slot.slot}}</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 mt-3">
+        <div *ngIf="sellerObj" class="card" id="user-card">
+            <img class="card-img-top" [src]="sellerObj.image">
+            <div class="card-body">
+                <h5 class="card-title">{{sellerObj.name}}</h5>
+
+            </div>
+        </div>
+    </div>
+</div>
